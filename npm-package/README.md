@@ -101,6 +101,26 @@ export class InputPageModule {}
 <flexiboard [visible]="true" theme="ionic" keyboard="number" (keyTap)="onTap($event)" (keyPress)="onPress($event)">
 </flexiboard>
 ```
+# Basic Usage (Additional External Components)
+
+Additional components can be included in the markup whether the virtual keyboard definition is described in the markup or in an injected FlexiboardDefinitionProvider.
+
+In this example the root component is an ion-toolbar element, however any element that is not a flexiboard-row or flexiboard-column element will be rendered above the virtual keyboard.
+``` HTML
+<ion-header>
+  <ion-navbar>
+    <ion-title>Markup Template Demo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<flexiboard [visible]="true" theme="ionic" keyboard="number" (keyTap)="onTap($event)" (keyPress)="onPress($event)">
+    <ion-toolbar no-border-bottom>
+        <ion-buttons start>
+            <button ion-button (click)="hideKeyboard()">Cancel</button>
+        </ion-buttons>
+    </ion-toolbar>
+</flexiboard>
+```
 # Page Component Code Example with Injected FlexiboardDefinitionProvider
 ``` ts
 import { Component } from '@angular/core';
@@ -225,26 +245,6 @@ function mockFormat(): FlexiItem[] {
         }
     ];
 }
-```
-
-# Basic Usage (Additional External Components)
-
-In this example the root component is an ion-toolbar element, however any element that is not a flexiboard-row or flexiboard-column element will be rendered above the virtual keyboard.
-
-``` HTML
-<ion-header>
-  <ion-navbar>
-    <ion-title>Markup Template Demo</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<flexiboard [visible]="true" theme="ionic" keyboard="number" (keyTap)="onTap($event)" (keyPress)="onPress($event)">
-    <ion-toolbar no-border-bottom>
-        <ion-buttons start>
-            <button ion-button (click)="hideKeyboard()">Cancel</button>
-        </ion-buttons>
-    </ion-toolbar>
-</flexiboard>
 ```
 # Package Exports 
 The package exports the following types:
