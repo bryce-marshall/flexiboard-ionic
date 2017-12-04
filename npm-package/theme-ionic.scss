@@ -1,0 +1,67 @@
+flexiboard {   
+    > div {                 
+        &.theme-ionic {
+            .flexiboard-container {
+                outline: solid #fff 1px;
+                background-color: #fff;
+            }
+
+            .flexiboard-key-wrapper {
+                .flexiboard-key {                    
+                    -webkit-transition: background 150ms ease-in-out;
+                    -moz-transition: background 150ms ease-in-out;
+                    -o-transition: background 150ms ease-in-out;
+                    -ms-transition: background 150ms ease-in-out;
+                    transition: background 150ms ease-in-out;
+                }
+            }
+            &.round-buttons {
+                .flexiboard-key-wrapper {
+                    &:not(flexiboard-blank) {
+                        .flexiboard-key {
+                            &:not([disabled]):not(.action-key) { color: #fff; background: #3782fe; }
+                            &:not([disabled]).action-key { color: #3782fe; background: #fff; border: solid 2px #3782fe; }
+                            &[disabled] { color: rgba(#fff, 0.75); background: darken(#fff, 30%); }
+        
+                            border: none;
+                            &:active:not([disabled]) {
+                                background: lighten(#3782fe, 10%);
+                                border: solid #488efe 2px !important;                        
+                            }
+                        }
+                    }
+                }
+            }            
+            &:not(.round-buttons) {
+                .flexiboard-key-wrapper {
+                    &:not(flexiboard-blank):not([disabled]) {
+                        -webkit-transition: transform 250ms ease-out;
+                        -moz-transition: transform 250ms ease-out;
+                        -o-transition: transform 250ms ease-out;
+                        -ms-transition: transform 250ms ease-out;
+                        transition: transform 250ms ease-out;
+
+                        &:active {
+                            -webkit-transition: transform 100ms ease-out;
+                            -moz-transition: transform 100ms ease-out;
+                            -o-transition: transform 100ms ease-out;
+                            -ms-transition: transform 100ms ease-out;
+                            transition: transform 100ms ease-out;
+                            transform: scale3d(0.95, 0.95, 1);
+                            .flexiboard-key {
+                                background: lighten(#3782fe, 10%);
+                            }                            
+                        }
+                    }
+
+                    .flexiboard-key {
+                        &:not([disabled]):not(.action-key) { color: #fff; background: #3782fe; }
+                        &:not([disabled]).action-key { color: #3782fe; background: #fff; border: solid 2px #3782fe; }
+                        &[disabled] { color: rgba(#fff, 0.75); background: darken(#fff, 30%); }                    
+                        margin: 1px;
+                    }
+                }
+            }            
+        }
+    }
+}

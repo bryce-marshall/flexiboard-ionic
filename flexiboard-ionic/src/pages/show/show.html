@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Show Keyboard Demo</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Keyboard Type</ion-label>
+            <ion-select [(ngModel)]="type">
+                <ion-option value="keypad">Keypad</ion-option>
+                <ion-option value="phone">Phone</ion-option>
+                <ion-option value="number">Number</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Width</ion-label>
+            <ion-select [(ngModel)]="width">
+                <ion-option value="100%">100%</ion-option>
+                <ion-option value="75%">75%</ion-option>
+                <ion-option value="50%">50%</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Align</ion-label>
+            <ion-select [(ngModel)]="align">
+                <ion-option value="left">Left</ion-option>
+                <ion-option value="center">Center</ion-option>
+                <ion-option value="right">Right</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Round Buttons</ion-label>
+            <ion-toggle [(ngModel)]="roundButtons"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-label>Visible</ion-label>
+            <ion-toggle [(ngModel)]="visible"></ion-toggle>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<flexiboard [keyboard]="type" [align]="align" [width]="width" [visible]="visible" [roundButtons]="roundButtons" [swipeEnabled]="true"
+    [theme]="theme" (visibilityChanged)="onVisibility($event)">
+    <ion-toolbar no-border-bottom>
+        <ion-buttons start>
+            <button ion-button (click)="hideKeyboard()">Cancel</button>
+        </ion-buttons>
+    </ion-toolbar>
+</flexiboard>

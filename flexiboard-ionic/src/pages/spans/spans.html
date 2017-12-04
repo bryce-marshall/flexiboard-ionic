@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Spans Demo</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Keyboard Type</ion-label>
+            <ion-select [(ngModel)]="type">
+                <ion-option value="mock1">Mock 1</ion-option>
+                <ion-option value="mock2">Mock 2</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Theme</ion-label>
+            <ion-select [(ngModel)]="theme">
+                <ion-option value="ionic">Ionic</ion-option>
+                <ion-option value="light">Light</ion-option>
+                <ion-option value="dark">Dark</ion-option>
+                <ion-option value="messenger">Messenger</ion-option>
+            </ion-select>
+        </ion-item>        
+        <ion-item>
+            <ion-label>Round Buttons</ion-label>
+            <ion-toggle [(ngModel)]="roundButtons"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-label>Visible</ion-label>
+            <ion-toggle [(ngModel)]="visible"></ion-toggle>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<flexiboard [keyboard]="type" align="center" width="100%" [visible]="visible" [roundButtons]="roundButtons" [swipeEnabled]="true"
+    [theme]="theme" (visibilityChanged)="onVisibility($event)">
+</flexiboard>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Markup Template Demo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Theme</ion-label>
+      <ion-select [(ngModel)]="theme">
+        <ion-option value="ionic">Ionic</ion-option>
+        <ion-option value="light">Light</ion-option>
+        <ion-option value="dark">Dark</ion-option>
+        <ion-option value="messenger">Messenger</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Round Buttons</ion-label>
+      <ion-toggle [(ngModel)]="roundButtons"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Visible</ion-label>
+      <ion-toggle [(ngModel)]="visible"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<flexiboard align="center" width="100%" [visible]="visible" [roundButtons]="roundButtons" [swipeEnabled]="true" [theme]="theme"
+  (keyTap)="onTap($event)" (keyPress)="onPress($event)" (visibilityChanged)="onVisibility($event)">
+  <flexiboard-column>
+      <flexiboard-key id="enable" [value]="enableValue" [text]="enableText"></flexiboard-key>
+    </flexiboard-column>
+  <flexiboard-column [flexGrow]="2">
+    <flexiboard-key id="A"></flexiboard-key>
+    <flexiboard-row>
+      <flexiboard-column [flexGrow]="3">
+        <flexiboard-row>
+            <flexiboard-key id="1" [value]="1"></flexiboard-key>
+            <flexiboard-key id="2" [value]="2" subtext="ABC"></flexiboard-key>
+            <flexiboard-key id="3" [value]="3" subtext="DEF"></flexiboard-key>          
+        </flexiboard-row>
+        <flexiboard-row>
+            <flexiboard-key id="mail" iconName="md-mail" subtext="MAIL"></flexiboard-key>
+            <flexiboard-key id="0" [value]="0" subtext="+"></flexiboard-key>
+            <flexiboard-key id="keypad" iconName="md-keypad"></flexiboard-key>
+        </flexiboard-row>
+        <flexiboard-row>
+            <flexiboard-key id="B"></flexiboard-key>
+            <flexiboard-key id="C" [flexGrow]="2"></flexiboard-key>
+        </flexiboard-row>
+      </flexiboard-column>
+      <flexiboard-column [flexGrow]="1">
+          <flexiboard-key id="D"></flexiboard-key>
+          <flexiboard-key id="located" iconName="md-locate" subtext="LOCATE" [action]="true"></flexiboard-key>
+      </flexiboard-column>
+    </flexiboard-row>
+    <flexiboard-key id="done" [text]="doneText" [iconName]="doneIcon" [action]="true"></flexiboard-key>
+  </flexiboard-column>
+</flexiboard>

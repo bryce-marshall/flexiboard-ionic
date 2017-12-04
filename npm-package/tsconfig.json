@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": ".",
+    // "baseUrl": "../flexiboard-ionic/src/",
+    "sourceMap": false,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    // "typeRoots": [
+    //   "../flexiboard-ionic/node_modules/@types"
+    // ],
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  },
+  "include": [
+    "../flexiboard-ionic/src/components/flexiboard"
+  ],
+  "exclude": [
+    ".vscode"
+  ]
+}

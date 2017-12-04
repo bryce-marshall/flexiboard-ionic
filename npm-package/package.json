@@ -1,0 +1,36 @@
+{
+  "name": "@brycemarshall/flexiboard-ionic",
+  "version": "0.0.1",
+  "description": "An Ionic virtual keyboard implementation.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryce-marshall/flexiboard-ionic.git"
+  },
+  "main": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flexiboard",
+    "keyboard",
+    "ionic",
+    "custom keyboard",
+    "virtual keyboard",
+    "digit",
+    "number",
+    "numeric",
+    "flex",
+    "span"
+  ],
+  "author": "Bryce Marshall",
+  "license": "MIT",
+
+  "peerDependencies": {
+    "@angular/common": ">=4.0.0",
+    "@angular/core": ">=4.0.0",
+    // "rxjs": ">=5.0.0",
+    // "zone.js": ">=0.8.0",
+    "ionic-angular": ">=3.0.0"
+  },
+  "devDependencies": {}
+}

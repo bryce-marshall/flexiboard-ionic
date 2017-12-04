@@ -1,0 +1,6 @@
+<div [class]="getBaseClasses()" [style.width]="width">
+  <ng-content></ng-content>
+  <flexiboard-container class="flexiboard-container">
+      <ng-content select="flexiboard-row|flexiboard-column"></ng-content>
+  </flexiboard-container>
+</div>
