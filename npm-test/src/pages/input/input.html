@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Input Binding Demo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item [class.active]="focus === 'userId'" (touchend)="setFocus('userId')">
+      <ion-label stacked>User ID</ion-label>
+      <ion-input type="text" disabled [ngModel]="userId"></ion-input>
+    </ion-item>
+
+    <ion-item [class.active]="focus === 'pin'" (touchend)="setFocus('pin')">
+      <ion-label stacked>PIN</ion-label>
+      <ion-input type="password" disabled [ngModel]="pin"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hardware Capture</ion-label>
+      <ion-toggle [(ngModel)]="hardCapture"></ion-toggle>
+  </ion-item>    
+  </ion-list>
+</ion-content>
+
+<flexiboard keyboard="number" theme="ionic" [align]="center"  [visible]="false" [roundButtons]="false" [swipeEnabled]="false" [hardCapture]="hardCapture"></flexiboard>
